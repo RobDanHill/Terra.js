@@ -1,31 +1,3 @@
-/*We gon' learn you sum random terrain generation using the good old diamond square algorithm.
-
-The diamond square algorithm is essentially an extended version of the midpoint displacement algorithm.
-
->NULL what's the midpoint displacement algorithm?
-
-Well, faggit think about the name for a moment... I'll wait.
-
-Yeah, it's where you have a vertical line and you find the midpoint of that line and then displace the midpoint on the y-axis by some arbitrary random value and then decrement the random number range by a value you have chosen called the roughness constant, then repeat this for the new line segments and so and so on until some stopping condition, there is no real right or wrong with when to stop.
-
-Now on to the real start the diamond square algorithm.
-
-The way it works is that you have a square grid whose number of points should be a power of two plus one.
-
-See pic related for a shitty drawing I found using google.
-
-So, let's just dive into the code.
-
-Here we are going to set the corners.
-[code]
-function terrain(detail) {
-
-}
-[/code]*/
-
-
-
-
 // Here we create a function to act as a terrain class
 // Detail is just our level of detail or rather the roughness constant
 function Terrain(detail) {
