@@ -12,6 +12,10 @@ Terrain.prototype.get = function(x, y) {
 	return this.map[x + this.size * y];
 };
 
+Terrain.prototype.get = function() {
+	return this.map;
+};
+
 Terrain.prototype.set = function(x, y, val) {
 	this.map[x + this.size * y] = val;
 };
