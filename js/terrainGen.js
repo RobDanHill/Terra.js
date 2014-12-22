@@ -86,5 +86,5 @@ Terrain.prototype.generate = function(roughness) {
 */
 
 Terrain.prototype.render = function(ctx, width, height) {
-
+	
 };

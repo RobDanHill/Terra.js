@@ -1,20 +1,40 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-<title>Tearra.js</title>
-<script src='terrainGen.js'></script>
-</head>
+	<head>
+		<title>Terra.js</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+		<script src='js/terrainGen.js'></script>
+	</head>
+	<body>
+		<script src="js/three.min.js"></script>
+		<script>
 
-<body>
-	<canvas id='canvas1' width='640' height='320' style='border:3px solid #ffffff'>
-	</canvas>
+			// Three.js stuff
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+			var renderer = new THREE.WebGLRenderer();
 
-	<script>
-		var terrain = new Terrain(5);
-		terrain.generate(0.3);
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
 
-		console.log(terrain.map);
-	</script>
-</body>
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			var cube = new THREE.Mesh( geometry, material ); scene.add( cube );
 
+			camera.position.z = 5;
+
+			cube.rotation.x += 10;
+
+			var render = function () {
+				requestAnimationFrame( render );
+				cube.rotation.y += 0.01;
+				renderer.render(scene, camera);
+			};
+			render();
+		</script>
+	</body>
 </html>
