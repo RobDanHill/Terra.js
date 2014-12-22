@@ -12,10 +12,6 @@ Terrain.prototype.get = function(x, y) {
 	return this.map[x + this.size * y];
 };
 
-Terrain.prototype.get = function() {
-	return this.map;
-};
-
 Terrain.prototype.set = function(x, y, val) {
 	this.map[x + this.size * y] = val;
 };
@@ -60,7 +56,7 @@ Terrain.prototype.generate = function(roughness) {
 	}
 
 	// Divide the diamonds into squares
-	function square(x, y, offset) {
+	function square(x, y, size, offset) {
 		var avg = average([
 			self.get(x - size, y - size), // Upper left
 			self.get(x + size, y - size), // Upper right
@@ -71,7 +67,7 @@ Terrain.prototype.generate = function(roughness) {
 		self.set(x, y, avg + offset);
 	}
 
-	function diamond(x, y, offset) {
+	function diamond(x, y, size, offset) {
 		var avg = average([
 			self.get(x, y - size), // Top
 			self.get(x + size, y), // Right
@@ -81,4 +77,14 @@ Terrain.prototype.generate = function(roughness) {
 
 		self.set(x, y, avg + offset);
 	}
+};
+
+/*
+ *------------------
+ * Render with WebGL
+ *------------------
+*/
+
+Terrain.prototype.render = function(ctx, width, height) {
+
 };
