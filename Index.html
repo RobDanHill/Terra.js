@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Proscape</title>
+<title>Tearra.js</title>
 <script src='terrainGen.js'></script>
 </head>
 
-<body onload='start()'>
+<body>
 	<canvas id='canvas1' width='640' height='320' style='border:3px solid #ffffff'>
 	</canvas>
 
 	<script>
-		var generator = new Terrain();
-		generator.generate();
-		var map = generator.get();
-		console.log(map);
+		var terrain = new Terrain(5);
+		terrain.generate(0.3);
+
+		console.log(terrain.map);
 	</script>
 </body>
 
