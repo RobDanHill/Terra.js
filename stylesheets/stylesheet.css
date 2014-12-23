@@ -5,27 +5,21 @@ html {
 
 body {
   margin-top: auto;
-  margin-bottom: auto;
-  padding-bottom: 35px;
+  margin-bottom: 35px;
+  padding-bottom: 20px;
   background: rgba(30, 30, 40, 1);
   font-family: 'Source Code Pro', ;
   font-weight: 200;
   overflow: auto;
 }
 
-.block:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em; /* Adjusts for spacing */
-}
-
 .container {
     width: 90%;
-    height: 80%;
+    /*height: 80%;*/
     max-width: 940px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin: 0 auto;*/
     /*box-shadow: 3px 3px 1px #000000;*/
 }
 
