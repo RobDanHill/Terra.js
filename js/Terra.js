@@ -79,12 +79,62 @@ Terrain.prototype.generate = function(roughness) {
 	}
 };
 
-/*
- *------------------
- * Render with WebGL
- *------------------
-*/
+Terrain.prototype.draw = function(map) {
+  // Three.js rendering stuff
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+  var renderer = new THREE.WebGLRenderer();
 
-Terrain.prototype.render = function(ctx, width, height) {
+  renderer.setSize( window.innerWidth, window.innerHeight );
+  container.appendChild( renderer.domElement );
 
+  var geometry = new THREE.PlaneGeometry( this.size*2, this.size*2, this.max, this.max );
+  geometry.dynamic = true;
+
+  var l = geometry.vertices.length;
+  console.log('The number of verticies is ' + l);
+  for ( var i = 0; i < l; i++ ) {
+    geometry.vertices[i].z = map[i];
+  }
+
+  var material = new THREE.MeshBasicMaterial({
+    wireframe: true,
+    color: 0x00ff00
+  });
+
+  var plane = new THREE.Mesh( geometry, material );
+
+  scene.add( plane );
+
+  camera.position.z = this.size * 3;
+
+  plane.rotation.x = 1.8;
+
+  var controls = new THREE.FlyControls( camera );
+  controls.movementSpeed = 50;
+  controls.domElement = container;
+  controls.rollSpeed = Math.PI / 24;
+  controls.autoForward = false;
+  controls.dragToLook = false;
+
+  var render = function () {
+    requestAnimationFrame( render );
+    plane.rotation.z += 0.003;
+    controls.update( clock.getDelta() );
+    renderer.render( scene, camera );
+  };
+  render();
 };
+
+var clock = new THREE.Clock();
+var container = document.createElement( 'div' );
+document.body.appendChild( container );
+
+var terrain = new Terrain(5);
+terrain.generate(0.7);
+var map = terrain.map;
+
+console.log(map + ' ' + terrain.size);
+console.log(map.length);
+
+terrain.draw(map);
