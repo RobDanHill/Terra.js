@@ -1,20 +1,22 @@
+html {
+    background: rgba(40, 40, 50, 1);
+    height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: #151515 url("../images/bkg.png") 0 0;
-  color: #eaeaea;
-  font: 16px;
-  line-height: 1.5;
+  background: rgba(30, 30, 40, 1);
   font-family: 'Source Code Pro', ;
   font-weight: 200;
 }
 
-/* General & 'Reset' Stuff */
-
 .container {
   width: 90%;
-  max-width: 600px;
+  height: 80%;
+  max-width: 940px;
   margin: 0 auto;
+  box-shadow: 5px;
 }
 
 .terra {
@@ -24,4 +26,56 @@ body {
     margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
+}
+
+h1, h2, h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Source Code Pro';
+  font-weight: 200;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: color .4s ease-in;
+  -moz-transition: color .4s ease-in;
+  -o-transition: color .4s ease-in;
+  -ms-transition: color .4s ease-in;
+  transition: color .4s ease-in;
+  /* color: rgba(215, 118, 44, 0.9); */
+  font-family: 'Source Code Pro';
+  font-weight: 200;
+}
+/*
+p {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Source Code Pro';
+  font-weight: 200;
+}*/
+
+p:hover {
+  /* color: rgba(215, 118, 44, 0.9);*/
+  color: #15C46C;
+  -webkit-transition: color .4s ease-in;
+  -moz-transition: color .4s ease-in;
+  -o-transition: color .4s ease-in;
+  -ms-transition: color .4s ease-in;
+  transition: color .4s ease-in;
+}
+
+a:link, a:hover, a:active, a:visited {
+    text-decoration: none;
+    font-family: 'Source Code Pro', ;
+    font-weight: 200;
+}
+
+.btn {
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
 }
