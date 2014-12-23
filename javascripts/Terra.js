@@ -107,7 +107,7 @@ Terrain.prototype.draw = function(map) {
 
   scene.add( plane );
 
-  camera.position.z = this.size * 1.5;
+  camera.position.z = this.size;
 
   plane.rotation.x = 1.8;
 
