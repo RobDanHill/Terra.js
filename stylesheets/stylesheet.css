@@ -4,26 +4,35 @@ html {
 }
 
 body {
-  margin: 0;
   margin-top: auto;
-  padding: 0;
+  margin-bottom: auto;
+  padding-bottom: 35px;
   background: rgba(30, 30, 40, 1);
   font-family: 'Source Code Pro', ;
   font-weight: 200;
+  overflow: auto;
+}
+
+.block:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
 }
 
 .container {
-  width: 90%;
-  height: 80%;
-  max-width: 940px;
-  margin: 0 auto;
-  box-shadow: 5px;
+    width: 90%;
+    height: 80%;
+    max-width: 940px;
+    margin: 0 auto;
+    /*box-shadow: 3px 3px 1px #000000;*/
 }
 
 .terra {
     height: 400px;
     width: auto;
-    margin-top: 25px;
+    margin-top: 50px;
     margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
@@ -69,14 +78,10 @@ p:hover {
   transition: color .4s ease-in;
 }
 
-a:link, a:hover, a:active, a:visited {
-    text-decoration: none;
+a:link {
     font-family: 'Source Code Pro', ;
     font-weight: 200;
-}
-
-.btn {
-    font: bold 11px Arial;
+    font: Source Code Pro;
     text-decoration: none;
     background-color: rgba(30, 30, 40, 1);
     color: rgba(255, 255, 255, 0.9);
@@ -85,6 +90,27 @@ a:link, a:hover, a:active, a:visited {
     border-right: 1px solid #15C46C;
     border-bottom: 1px solid #15C46C;
     border-left: 1px solid #15C46C;
-    font-family: 'Source Code Pro', ;
+}
+
+input[type='submit'] {
+    font-family: 'Source Code Pro';
     font-weight: 200;
+    font-size: 18px;
+    display: block;
+    border: none;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(30, 30, 40, 1);
+}
+
+input[type='submit']:focus {
+    color: #15C46C;
+    background-color: rgba(30, 30, 40, 1);
+}
+
+.btn {
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #15C46C;
+    border-right: 1px solid #15C46C;
+    border-bottom: 1px solid #15C46C;
+    border-left: 1px solid #15C46C;
 }
