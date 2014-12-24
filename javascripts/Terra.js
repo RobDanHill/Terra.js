@@ -100,7 +100,7 @@ Terrain.prototype.draw = function(map) {
 
   var material = new THREE.MeshBasicMaterial({
     wireframe: true,
-    color: 0x15C46C 
+    color: 0x15C46C
   });
 
   var plane = new THREE.Mesh( geometry, material );
@@ -112,7 +112,7 @@ Terrain.prototype.draw = function(map) {
   plane.rotation.x = 1.8;
 
   var controls = new THREE.FlyControls( camera );
-  controls.movementSpeed = 50;
+  controls.movementSpeed = 5;
   controls.domElement = container;
   controls.rollSpeed = Math.PI / 24;
   controls.autoForward = false;
@@ -120,7 +120,7 @@ Terrain.prototype.draw = function(map) {
 
   var render = function () {
     requestAnimationFrame( render );
-    plane.rotation.z += 0.003;
+    // plane.rotation.z += 0.003;
     controls.update( clock.getDelta() );
     renderer.render( scene, camera );
   };
