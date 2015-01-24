@@ -3,6 +3,8 @@
 
 ##Javascript procedural terrain generator
 
+Terra.js is very unfinished and may never get finished.
+
 Terra.js uses the diamond square algorithm to generate a height map that is rendered using Three.js.
 
 Currently is is only possible to generate terrains that are just planes, and there are some issues with the distrubution
