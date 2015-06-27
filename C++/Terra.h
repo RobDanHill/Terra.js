@@ -7,22 +7,23 @@ class Terra {
 
 public:
 
-	Terra( unsigned int );
-	~Terra();
-	float getMapPos( unsigned int, unsigned int );
-	void setMapPos( unsigned int, unsigned int, float );
-	int * Generate( float ); // Accepts a roughness constant
-	unsigned int getDetail() { return this->detail; }
+					Terra( unsigned int );
+				   ~Terra();
+	float			GetMapPos( unsigned int, unsigned int );
+	void			SetMapPos( unsigned int, unsigned int, float );
+	int *			Generate( float ); // Accepts a roughness constant
+	unsigned int	GetDetail() const { return this->detail; }
 
 private:
 
-	void Divide( unsigned int );
+	float			Average( float[] );
+	void			Divide( unsigned int );
 
-	unsigned int size;
-	unsigned int max;
-	unsigned int detail;
+	unsigned int	size;
+	unsigned int	max;
+	unsigned int	detail;
 
-	float * map;
+	float *			map;
 
 };
 

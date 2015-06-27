@@ -19,18 +19,26 @@ Terra::~Terra() {
 	delete map;
 }
 
-float Terra::getMapPos( unsigned int x, unsigned int y ) {
+float Terra::GetMapPos( unsigned int x, unsigned int y ) {
 
 	if ( x < 0 || x > this->max || y < 0 || y > this->max ) return -1;
 	return this->map[ x + this->size * y ];
 
 }
 
-void Terra::setMapPos( unsigned int x, unsigned int y, float value ){
+void Terra::SetMapPos( unsigned int x, unsigned int y, float value ){
 	this->map[ x + this->size * y ] = value;
 }
 
 int * Terra::Generate( float roughnessConstant ) {
 	
 	return ;
+}
+
+//--GetDetail--
+
+float Terra::Average( float values[] ) {
+
+
+
 }
