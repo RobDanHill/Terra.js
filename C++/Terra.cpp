@@ -36,8 +36,19 @@ void Terra::SetMapPos( unsigned int x, unsigned int y, float value ){
 }
 
 // This is the main function that you will call
+// May not need to return anything
 int * Terra::Generate( float roughnessConstant ) {
-	this->SetMapPos(0, 0,		
+	// How to do lexical closure in C++?
+	// Is it even neccessary or possible?
+	
+	// Set the corners of the map and their height values.
+	this->SetMapPos( 0, 0, this->max ); 		
+	this->SetMapPos( this->max, 0, this->max / 2 );
+	this->SetMapPos( this->max, this->max, 0 );
+	this->SetMapPos( 0, this->max, this->max / 2 );
+
+	this->divide( this->max );
+
 	return ;
 }
 
