@@ -35,8 +35,9 @@ void Terra::SetMapPos( unsigned int x, unsigned int y, float value ){
 	this->map[ x + this->size * y ] = value;
 }
 
+// This is the main function that you will call
 int * Terra::Generate( float roughnessConstant ) {
-	
+	this->SetMapPos(0, 0,		
 	return ;
 }
 

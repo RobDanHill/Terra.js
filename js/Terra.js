@@ -17,7 +17,7 @@ Terrain.prototype.set = function(x, y, val) {
 };
 
 Terrain.prototype.generate = function(roughness) {
-	var self = this; // This is just some weird javascript stuff, don't sweat it
+	var self = this; // Lexical binding, hold onto the previous state of the object even as it is changing
 
 	// Here we set the corner values of our terrain and their heights
 	this.set(0, 0, self.max);
