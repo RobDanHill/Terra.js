@@ -17,6 +17,9 @@ public:
 private:
 
 	float			Average( float[] );
+	void			Diamond( unsigned int, unsigned int, unsigned int, unsigned int );
+	void			Square( unsigned int, unsigned int, unsigned int, unsigned int );
+	float *			ValidPoints( float[] );
 	void			Divide( unsigned int );
 
 	unsigned int	size;

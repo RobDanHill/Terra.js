@@ -20,8 +20,8 @@ Terra::Terra( unsigned int detail ) {
 }
 
 Terra::~Terra() {
-	map = 0;
 	delete map;
+	map = nullptr;
 }
 
 float Terra::GetMapPos( unsigned int x, unsigned int y ) {
@@ -42,6 +42,28 @@ int * Terra::Generate( float roughnessConstant ) {
 
 float Terra::Average( float values[] ) {
 
+	
 
+}
+
+float * Terra::ValidPoints( float values[] ) {
+
+	unsigned int valuesLength = ( sizeof( values ) / sizeof( float ) );
+
+	unsigned int numValid = 0;
+	float * validValues;
+
+	for ( int i = 0; i < valuesLength; i++ ) {
+		if ( values[ i ] > -1 ) numValid++;
+	}
+
+	validValues = new float[ numValid ];
+	numValid = 0; // Re-use numValid as counter for new array
+
+	for ( int i = 0; i < valuesLength; i++ ) {
+		if ( values[ i ] > -1 ) { validValues[ numValid ] = values[ i ]; numValid++; }
+	}
+
+	return validValues;
 
 }
