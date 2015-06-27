@@ -39,3 +39,9 @@ int * Terra::Generate( float roughnessConstant ) {
 	
 	return ;
 }
+
+float Terra::Average( float values[] ) {
+
+
+
+}
