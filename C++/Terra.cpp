@@ -25,10 +25,8 @@ Terra::~Terra() {
 }
 
 float Terra::GetMapPos( unsigned int x, unsigned int y ) {
-
 	if ( x < 0 || x > this->max || y < 0 || y > this->max ) return -1;
 	return this->map[ x + this->size * y ];
-
 }
 
 void Terra::SetMapPos( unsigned int x, unsigned int y, float value ){
@@ -38,6 +36,7 @@ void Terra::SetMapPos( unsigned int x, unsigned int y, float value ){
 // This is the main function that you will call
 // May not need to return anything
 int * Terra::Generate( float roughnessConstant ) {
+
 	// How to do lexical closure in C++?
 	// Is it even neccessary or possible?
 	
@@ -50,10 +49,12 @@ int * Terra::Generate( float roughnessConstant ) {
 	this->Divide( this->max );
 
 	return NULL;
+
 }
 
 // Recursivly divide the map into smaller rectangles
-void Terra::Divide_r( float size ) {
+void Terra::Divide_r( unsigned int size ) {
+
 	float x 	= size / 2;
 	float y 	= size / 2;
     float half 	= size / 2;
@@ -77,6 +78,7 @@ void Terra::Divide_r( float size ) {
 	}
 
 	Divide_r( size / 2 );
+
 }
 
 float Terra::Average( float values[] ) {
