@@ -1,6 +1,7 @@
 #include "Terra.h"
 
 #include <math.h>
+#include <iostream>
 
 using namespace Algorithm;
 
@@ -20,8 +21,8 @@ Terra::Terra( unsigned int detail ) {
 }
 
 Terra::~Terra() {
-	delete map;
-	map = nullptr;
+	delete[] map;
+	map = 0;
 }
 
 float Terra::GetMapPos( unsigned int x, unsigned int y ) {
@@ -49,21 +50,20 @@ float Terra::Average( float values[] ) {
 
 }
 
-float * Terra::ValidPoints( float values[] ) {
-
-	unsigned int valuesLength = ( sizeof( values ) / sizeof( float ) );
+float * Terra::ValidPoints( float * values ) {
 
 	unsigned int numValid = 0;
 	float * validValues;
 
-	for ( unsigned int i = 0; i < sizeof( values ); i++ ) {
+	for ( unsigned int i = 0; i < ( sizeof( values ) / sizeof( float ) ); i++ ) {
+		std::cout << values[ i ] << std::endl;
 		if ( values[ i ] > -1 ) numValid++;
 	}
 
 	validValues = new float[ numValid ];
 	numValid = 0; // Re-use numValid as counter for new array
 
-	for ( unsigned int i = 0; i < sizeof( values ); i++ ) {
+	for ( unsigned int i = 0; i < ( sizeof( values ) / sizeof( values[ 0 ] ) ); i++ ) {
 		if ( values[ i ] > -1 ) { validValues[ numValid ] = values[ i ]; numValid++; }
 	}
 
