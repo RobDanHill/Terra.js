@@ -47,9 +47,34 @@ int * Terra::Generate( float roughnessConstant ) {
 	this->SetMapPos( this->max, this->max, 0 );
 	this->SetMapPos( 0, this->max, this->max / 2 );
 
-	this->divide( this->max );
+	this->Divide( this->max );
 
-	return ;
+	return NULL;
+}
+
+// Recursivly divide the map into smaller rectangles
+void Terra::Divide( float size ) {
+	float x 	= size / 2;
+	float y 	= size / 2;
+    float half 	= size / 2;
+
+	float scale = roughnessConstant * size;
+
+	if ( half < 1 ) return;
+
+	// Square
+	for ( y = half; y < this->max; y += size ) {
+		for ( x = half; x < this->max; x += size ) {
+			this->Square( x, y, half, /*Random num * scale * 2 - scale*/ );
+		}
+	}
+
+	// Diamond
+	for ( y = 0; y < this->max; y += size ) {
+		for ( x = ( y + half ) % size; x <= this->max; x += size ) {
+			this->Diamond( x, y, half, /*Random num * scale * 2 - scale*/ );
+		}
+	}
 }
 
 float Terra::Average( float values[] ) {
