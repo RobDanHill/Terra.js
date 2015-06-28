@@ -46,7 +46,7 @@ int * Terra::Generate( float roughnessConstant ) {
 	this->SetMapPos( this->max, this->max, 0 );
 	this->SetMapPos( 0, this->max, this->max / 2 );
 
-	this->Divide( this->max );
+	this->Divide_r( this->max );
 
 	return NULL;
 
