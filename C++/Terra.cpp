@@ -32,7 +32,7 @@ float Terra::GetMapPos( unsigned int x, unsigned int y ) {
 
 }
 
-void Terra::SetMapPos( unsigned int x, unsigned int y, float value ){
+void Terra::SetMapPos( unsigned int x, unsigned int y, float value ) {
 	this->map[ x + this->size * y ] = value;
 }
 
@@ -52,19 +52,29 @@ float Terra::Average( float values[] ) {
 
 float * Terra::ValidPoints( float values[] ) {
 
+	// Test array
+	float values2[] = { 1, -1, 2, 5 };
+
 	unsigned int numValid = 0;
 	float * validValues;
 
-	for ( unsigned int i = 0; i < ( sizeof( values ) / sizeof( float ) ); i++ ) {
-		std::cout << values[ i ] << std::endl;
-		if ( values[ i ] > -1 ) numValid++;
+	for ( unsigned int i = 0; i < ( sizeof( values2 ) / sizeof( float ) ); i++ ) {
+		//std::cout << values2[ i ] << std::endl;
+		if ( values2[ i ] > -1 ) numValid++;
 	}
+
+	//std::cout << std::endl;
+	//std::cout << std::endl;
 
 	validValues = new float[ numValid ];
 	numValid = 0; // Re-use numValid as counter for new array
 
-	for ( unsigned int i = 0; i < ( sizeof( values ) / sizeof( values[ 0 ] ) ); i++ ) {
-		if ( values[ i ] > -1 ) { validValues[ numValid ] = values[ i ]; numValid++; }
+	for ( unsigned int i = 0; i < ( sizeof( values2 ) / sizeof( float ) ); i++ ) {
+		if ( values2[ i ] > -1 ) { validValues[ numValid ] = values2[ i ]; numValid++; }
+	}
+
+	for ( unsigned int i = 0; i < ( sizeof( validValues ) / sizeof( float ) ); i++ ) {
+		std::cout << validValues[ i ] << std::endl;
 	}
 
 	return validValues;
