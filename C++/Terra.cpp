@@ -37,12 +37,15 @@ void Terra::SetMapPos( unsigned int x, unsigned int y, float value ){
 
 int * Terra::Generate( float roughnessConstant ) {
 	
-	return ;
+	int number;
+	int * ptr = &number;
+
+	return ptr;
 }
 
 float Terra::Average( float values[] ) {
 
-	
+	return 1.0f;
 
 }
 
@@ -53,14 +56,14 @@ float * Terra::ValidPoints( float values[] ) {
 	unsigned int numValid = 0;
 	float * validValues;
 
-	for ( int i = 0; i < valuesLength; i++ ) {
+	for ( unsigned int i = 0; i < sizeof( values ); i++ ) {
 		if ( values[ i ] > -1 ) numValid++;
 	}
 
 	validValues = new float[ numValid ];
 	numValid = 0; // Re-use numValid as counter for new array
 
-	for ( int i = 0; i < valuesLength; i++ ) {
+	for ( unsigned int i = 0; i < sizeof( values ); i++ ) {
 		if ( values[ i ] > -1 ) { validValues[ numValid ] = values[ i ]; numValid++; }
 	}
 

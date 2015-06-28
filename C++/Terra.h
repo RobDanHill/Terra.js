@@ -14,12 +14,14 @@ public:
 	int *			Generate( float ); // Accepts a roughness constant
 	unsigned int	GetDetail() const { return this->detail; }
 
+	float *			ValidPoints( float[] );
+
 private:
 
 	float			Average( float[] );
 	void			Diamond( unsigned int, unsigned int, unsigned int, unsigned int );
 	void			Square( unsigned int, unsigned int, unsigned int, unsigned int );
-	float *			ValidPoints( float[] );
+	//float *			ValidPoints( float[] );
 	void			Divide( unsigned int );
 
 	unsigned int	size;
