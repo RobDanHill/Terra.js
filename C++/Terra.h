@@ -19,14 +19,10 @@ public:
 private:
 
 	float			Average( float[] );
-<<<<<<< HEAD
 	void			Diamond( unsigned int, unsigned int, unsigned int, unsigned int );
 	void			Square( unsigned int, unsigned int, unsigned int, unsigned int );
 	//float *			ValidPoints( float[] );
-	void			Divide( unsigned int );
-=======
 	void			Divide_r( unsigned int );
->>>>>>> generate-c++
 
 	unsigned int	size;
 	unsigned int	max;
