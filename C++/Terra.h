@@ -14,7 +14,7 @@ public:
 	int *			Generate( float ); // Accepts a roughness constant
 	unsigned int	GetDetail() const { return this->detail; }
 
-	float *			ValidPoints( float * );
+	float *			ValidPoints( float[] );
 
 private:
 

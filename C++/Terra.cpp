@@ -50,7 +50,7 @@ float Terra::Average( float values[] ) {
 
 }
 
-float * Terra::ValidPoints( float * values ) {
+float * Terra::ValidPoints( float values[] ) {
 
 	unsigned int numValid = 0;
 	float * validValues;
