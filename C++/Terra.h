@@ -17,7 +17,7 @@ public:
 private:
 
 	float			Average( float[] );
-	void			Divide( unsigned int );
+	void			Divide_r( unsigned int );
 
 	unsigned int	size;
 	unsigned int	max;

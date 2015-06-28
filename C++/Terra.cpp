@@ -53,7 +53,7 @@ int * Terra::Generate( float roughnessConstant ) {
 }
 
 // Recursivly divide the map into smaller rectangles
-void Terra::Divide( float size ) {
+void Terra::Divide_r( float size ) {
 	float x 	= size / 2;
 	float y 	= size / 2;
     float half 	= size / 2;
@@ -75,6 +75,8 @@ void Terra::Divide( float size ) {
 			this->Diamond( x, y, half, /*Random num * scale * 2 - scale*/ );
 		}
 	}
+
+	Divide_r( size / 2 );
 }
 
 float Terra::Average( float values[] ) {
