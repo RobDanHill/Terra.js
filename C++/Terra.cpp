@@ -51,30 +51,19 @@ float Terra::Average( float values[] ) {
 }
 
 float * Terra::ValidPoints( const float ( &values ) [ 4 ] ) {
-
-	// Test array
-	float values2[] = { 1, -1, 2, 5 };
-
+	
 	unsigned int numValid = 0;
 	float * validValues;
 
-	for ( unsigned int i = 0; i < ( sizeof( values2 ) / sizeof( float ) ); i++ ) {
-		//std::cout << values2[ i ] << std::endl;
-		if ( values2[ i ] > -1 ) numValid++;
+	for ( unsigned int i = 0; i < 4; i++ ) {
+		if ( values[ i ] > -1 ) numValid++; // Find the number of valid points for instantiation of new array
 	}
-
-	//std::cout << std::endl;
-	//std::cout << std::endl;
 
 	validValues = new float[ numValid ];
 	numValid = 0; // Re-use numValid as counter for new array
 
-	for ( unsigned int i = 0; i < ( sizeof( values2 ) / sizeof( float ) ); i++ ) {
-		if ( values2[ i ] > -1 ) { validValues[ numValid ] = values2[ i ]; numValid++; }
-	}
-
-	for ( unsigned int i = 0; i < ( sizeof( ( validValues ) ) / sizeof( float ) ); i++ ) {
-		std::cout << validValues[ i ] << std::endl;
+	for ( unsigned int i = 0; i < 4; i++ ) {
+		if ( values[ i ] > -1 ) { validValues[ numValid ] = values[ i ]; numValid++; }
 	}
 
 	return validValues;
